@@ -20,8 +20,9 @@ function Starred() {
     setAnchorEl(null)
   }
   return (
-    <div>
+    <>
       <Button
+        sx={{ color: 'white' }}
         id="basic-button"
         aria-controls={open ? 'basic-menu-starred' : undefined}
         aria-haspopup="true"
@@ -67,7 +68,7 @@ function Starred() {
           <ListItemText>Custom spacing...</ListItemText>
         </MenuItem>
       </Menu>
-    </div>
+    </>
   )
 }
 

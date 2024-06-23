@@ -8,6 +8,7 @@ import ListItemText from '@mui/material/ListItemText'
 import ListItemIcon from '@mui/material/ListItemIcon'
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore'
 import Check from '@mui/icons-material/Check'
+import { Box } from '@mui/material'
 
 
 function Recent() {
@@ -20,8 +21,9 @@ function Recent() {
     setAnchorEl(null)
   }
   return (
-    <div>
+    <Box>
       <Button
+        sx={{ color: 'white' }}
         id="basic-button"
         aria-controls={open ? 'basic-menu-recent' : undefined}
         aria-haspopup="true"
@@ -67,7 +69,7 @@ function Recent() {
           <ListItemText>Custom spacing...</ListItemText>
         </MenuItem>
       </Menu>
-    </div>
+    </Box>
   )
 }
 

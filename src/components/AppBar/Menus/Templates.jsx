@@ -8,6 +8,7 @@ import ListItemText from '@mui/material/ListItemText'
 import ListItemIcon from '@mui/material/ListItemIcon'
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore'
 import Check from '@mui/icons-material/Check'
+import { Box } from '@mui/material'
 
 
 function Templates() {
@@ -20,8 +21,9 @@ function Templates() {
     setAnchorEl(null)
   }
   return (
-    <div>
+    <Box>
       <Button
+        sx={{ color: 'white' }}
         id="basic-button"
         aria-controls={open ? 'basic-menu-templates' : undefined}
         aria-haspopup="true"
@@ -67,7 +69,7 @@ function Templates() {
           <ListItemText>Custom spacing...</ListItemText>
         </MenuItem>
       </Menu>
-    </div>
+    </Box>
   )
 }
 

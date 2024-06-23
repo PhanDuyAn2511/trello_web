@@ -29,7 +29,10 @@ function Profiles() {
           aria-haspopup="true"
           aria-expanded={open ? 'true' : undefined}
         >
-          <Avatar sx={{ width: 30, height: 30 }}>A</Avatar>
+          <Avatar sx={{ width: 36, height: 36 }}
+            alt="Remy Sharp"
+            src="https://scontent.fdad3-1.fna.fbcdn.net/v/t39.30808-1/331478501_728162635423821_1967223198635575044_n.jpg?stp=dst-jpg_p200x200&_nc_cat=108&ccb=1-7&_nc_sid=5f2048&_nc_eui2=AeFrsBHk8I0A2oomAidzM3Wv25ej32UnMELbl6PfZScwQkREX9zNP2rDybA3WXTuQzWFFbShoeKM872ou0e0Fl9A&_nc_ohc=yD9FmHVENLIQ7kNvgFFh39l&_nc_ht=scontent.fdad3-1.fna&oh=00_AYBRfg4Esmlatn50Jxot2IqGMApv_syRnq7uIbfyOmaLQQ&oe=667DB01C"
+          >A</Avatar>
         </IconButton>
       </Tooltip>
       <Menu
@@ -42,7 +45,7 @@ function Profiles() {
         }}
       >
         <MenuItem >
-          <Avatar sx={{ width: 28, height: 28, mr: 2}} /> Profile
+          <Avatar sx={{ width: 28, height: 28, mr: 2 }} /> Profile
         </MenuItem>
         <MenuItem >
           <Avatar sx={{ width: 28, height: 28, mr: 2 }} /> My account
