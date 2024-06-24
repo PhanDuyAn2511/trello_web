@@ -11,12 +11,13 @@ import ContentCopy from '@mui/icons-material/ContentCopy'
 import ContentPaste from '@mui/icons-material/ContentPaste'
 import AddCardIcon from '@mui/icons-material/AddCard'
 import DragHandleIcon from '@mui/icons-material/DragHandle'
+import { mapOrder } from '~/utils/soft'
 
 import { useState } from 'react'
-import ListCard from './ListCards/ListCard'
+import ListCards from './ListCards/ListCard'
 
 
-function Column() {
+function Column({ column }) {
   const [anchorEl, setAnchorEl] = useState(null)
   const open = Boolean(anchorEl)
   const handleClick = (event) => {
@@ -25,6 +26,8 @@ function Column() {
   const handleClose = () => {
     setAnchorEl(null)
   }
+  const orderedCards = mapOrder(column?.cards, column.cardOrderIds, '_id')
+
   return (
     <Box
       sx={{
@@ -35,14 +38,14 @@ function Column() {
         borderRadius: '6px',
         height: 'fit-content',
         maxHeight: (theme) => `calc(
-            ${theme.trello.boardContentHeight} - 
+            ${theme.trello.boardContentHeight} -
             ${theme.spacing(5)}
           )`
       }}
     >
       {/*BOX HEADER*/}
       <Box sx={{
-        height: (theme) => {theme.COLUMN_HEADER_HEIGHT},
+        height: (theme) => { theme.COLUMN_HEADER_HEIGHT },
         p: 2,
         display: 'flex',
         alignItems: 'center',
@@ -55,7 +58,7 @@ function Column() {
             cursor: 'pointer'
           }}
         >
-          Column Title
+          {column?.title}
         </Typography>
         <Box>
           <Tooltip title="More option">
@@ -106,6 +109,7 @@ function Column() {
               </Typography>
             </MenuItem>
 
+
             <Divider />
             <MenuItem>
               <ListItemIcon>
@@ -122,10 +126,9 @@ function Column() {
           </Menu>
         </Box>
       </Box>
-
-
       {/*BOX LIST CARD*/}
-      <ListCard/>
+      <ListCards cards={orderedCards} />
+
       {/*BOX FOOTER*/}
       <Box
         sx={{
@@ -141,8 +144,10 @@ function Column() {
         </Tooltip>
       </Box>
 
+
     </Box>
   )
 }
+
 
 export default Column
